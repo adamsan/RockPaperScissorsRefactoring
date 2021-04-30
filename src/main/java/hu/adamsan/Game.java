@@ -37,9 +37,7 @@ class Game {
         }
         Choice player = Choice.valueOf(playerChoice.toUpperCase());
 
-        String computerMoveChoice = getComputerMoveChoice();
-        println("The computer chose: " + computerMoveChoice);
-        Choice computer = Choice.valueOf(computerMoveChoice.toUpperCase());
+        Choice computer = getComputer();
 
         if (player.tiesWith(computer)) {
             println("It's a tie!");
@@ -50,9 +48,12 @@ class Game {
         }
     }
 
-    private String getComputerMoveChoice() {
+    private Choice getComputer() {
         String[] choices = new String[]{ROCK, PAPER, SCISSORS};
-        return choices[random.nextInt(3)];
+        String computerMoveChoice = choices[random.nextInt(3)];
+        println("The computer chose: " + computerMoveChoice);
+        Choice computer = Choice.valueOf(computerMoveChoice.toUpperCase());
+        return computer;
     }
 
     private boolean isValid(String playerChoice) {
