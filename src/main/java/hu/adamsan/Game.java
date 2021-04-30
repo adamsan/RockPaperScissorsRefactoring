@@ -49,10 +49,8 @@ class Game {
     }
 
     private Choice getComputer() {
-        String[] choices = new String[]{ROCK, PAPER, SCISSORS};
-        String computerMoveChoice = choices[random.nextInt(3)];
-        println("The computer chose: " + computerMoveChoice);
-        Choice computer = Choice.valueOf(computerMoveChoice.toUpperCase());
+        Choice computer = Choice.values()[random.nextInt(3)];
+        println("The computer chose: " + computer.toLowerCase());
         return computer;
     }
 
