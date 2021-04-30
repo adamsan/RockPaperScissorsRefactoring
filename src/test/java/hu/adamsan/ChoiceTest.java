@@ -30,4 +30,11 @@ class ChoiceTest {
         assertFalse(PAPER.beats(SCISSORS));
         assertFalse(ROCK.beats(PAPER));
     }
+
+    @Test
+    void testStringRepresentation() {
+        assertEquals("Rock", ROCK.capitalize());
+        assertEquals("Scissors", SCISSORS.capitalize());
+        assertEquals("paper", PAPER.toLowerCase());
+    }
 }

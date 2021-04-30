@@ -1,5 +1,7 @@
 package hu.adamsan;
 
+import java.util.Locale;
+
 public enum Choice {
     ROCK, PAPER, SCISSORS;
 
@@ -13,5 +15,14 @@ public enum Choice {
             case PAPER -> other == ROCK;
             case SCISSORS -> other == PAPER;
         };
+    }
+
+    public String capitalize() {
+        String s = this.toString();
+        return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+    }
+
+    public String toLowerCase() {
+        return this.toString().toLowerCase();
     }
 }
