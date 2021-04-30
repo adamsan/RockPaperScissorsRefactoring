@@ -1,8 +1,8 @@
 package hu.adamsan;
 
 import org.junit.jupiter.api.Test;
+
 import java.util.Random;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -13,12 +13,17 @@ class ApplicationTest {
 
     @Test
     void testMain() {
-        Scanner scanner = mock(Scanner.class); // Mockito cannot mock this, because it's a final class!
+        MyScanner scanner = mock(MyScanner.class);
         when(scanner.nextLine()).thenReturn("rock");
 
         Random random = mock(Random.class);
         when(random.nextInt(anyInt())).thenReturn(10).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
-        new Application.Game(scanner, System.out, random).invoke();
+        var out = new RememberingPrintStream(System.out);
+
+        new Application.Game(scanner, out, random).invoke();
+        String expected = "";
+        assertEquals(expected, out.getContent());
     }
+
 }
