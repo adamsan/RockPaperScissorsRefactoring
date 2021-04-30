@@ -35,23 +35,18 @@ class Game {
             println("Move not recognized! Please try again.");
             return;
         }
+        Choice player = Choice.valueOf(playerChoice.toUpperCase());
+
         String computerMoveChoice = getComputerMoveChoice();
         println("The computer chose: " + computerMoveChoice);
-        if (playerChoice.equals(computerMoveChoice)) {
-            println("It's a tie!");
-        } else if (playerChoice.equals(ROCK) && computerMoveChoice.equals(PAPER)) {
-            println("Paper beats rock. The computer wins!");
+        Choice computer = Choice.valueOf(computerMoveChoice.toUpperCase());
 
-        } else if (playerChoice.equals(ROCK) && computerMoveChoice.equals(SCISSORS)) {
-            println("Rock beats scissors. Player wins!");
-        } else if (playerChoice.equals(PAPER) && computerMoveChoice.equals(ROCK)) {
-            println("Paper beats rock. Player wins!");
-        } else if (playerChoice.equals(PAPER) && computerMoveChoice.equals(SCISSORS)) {
-            println("Scissors beats paper. The computer wins!");
-        } else if (playerChoice.equals(SCISSORS) && computerMoveChoice.equals(ROCK)) {
-            println("Rock beats scissors. The computer wins!");
-        } else {
-            println("Scissors beats paper. Player wins!");
+        if (player.tiesWith(computer)) {
+            println("It's a tie!");
+        } else if (player.beats(computer)) {
+            println(player.capitalize() + " beats " + computer.toLowerCase() + ". Player wins!");
+        } else if (computer.beats(player)) {
+            println(computer.capitalize() + " beats " + player.toLowerCase() + ". The computer wins!");
         }
     }
 
