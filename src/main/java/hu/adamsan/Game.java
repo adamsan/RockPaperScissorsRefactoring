@@ -56,18 +56,8 @@ class Game {
     }
 
     private String getComputerMoveChoice() {
-        // Random number from 0 - 98 (0-32, 33-65, 66-98)
-        int computerNumber = random.nextInt(98);
-
-        String computerMoveChoice;
-        if (computerNumber < 32) {
-            computerMoveChoice = ROCK;
-        } else if (computerNumber > 32 && computerNumber < 66) {
-            computerMoveChoice = PAPER;
-        } else {
-            computerMoveChoice = SCISSORS;
-        }
-        return computerMoveChoice;
+        String[] choices = new String[]{ROCK, PAPER, SCISSORS};
+        return choices[random.nextInt(3)];
     }
 
     private boolean isValid(String playerChoice) {

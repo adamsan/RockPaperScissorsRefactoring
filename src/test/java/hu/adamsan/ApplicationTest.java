@@ -17,7 +17,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("rock");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(10).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(0).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
@@ -34,7 +34,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("paper");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(50).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(1).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
@@ -51,7 +51,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("scissors");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(90).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(2).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
@@ -68,7 +68,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("rock");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(90).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(2).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
@@ -84,7 +84,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("scissors");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(10).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(0).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
@@ -102,7 +102,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("paper");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(10).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(0).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
@@ -119,7 +119,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("rock");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(50).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(1).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
@@ -136,7 +136,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("scissors");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(90).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(2).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
@@ -153,7 +153,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("paper");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(90).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(2).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
@@ -171,7 +171,7 @@ class ApplicationTest {
         when(scanner.nextLine()).thenReturn("foobar");
 
         Random random = mock(Random.class);
-        when(random.nextInt(anyInt())).thenReturn(90).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+        when(random.nextInt(anyInt())).thenReturn(2).thenThrow(new RuntimeException("Random.nextInt() called twice"));
 
         var out = new RememberingPrintStream(System.out);
 
