@@ -41,6 +41,7 @@ public class Application {
                     "scissors".equals(playerChoice)) {
             } else {
                 println("Move not recognized! Please try again.");
+                return;
             }
 
             // Random number from 0 - 98 (0-32, 33-65, 66-98)

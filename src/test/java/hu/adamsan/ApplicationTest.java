@@ -177,9 +177,7 @@ class ApplicationTest {
 
         new Application.Game(scanner, out, random).invoke();
         String expected = "Do you pick rock, paper, or scissors?\n" +
-                "Move not recognized! Please try again.\n" +
-                "The computer chose: scissors\n" +
-                "Scissors beats paper. Player wins!";
+                "Move not recognized! Please try again.";
 
         assertEquals(expected, out.getContent());
 
