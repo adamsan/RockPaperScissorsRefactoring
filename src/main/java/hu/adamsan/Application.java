@@ -1,5 +1,6 @@
 package hu.adamsan;
 
+import java.io.PrintStream;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,6 +11,13 @@ public class Application {
     }
 
     static class Game {
+
+        private final PrintStream out;
+
+        public Game() {
+            out = System.out;
+        }
+
         void invoke() {
             println("Do you pick rock, paper, or scissors?");
 
@@ -82,7 +90,7 @@ public class Application {
         }
 
         private void println(String str) {
-            System.out.println(str);
+            out.println(str);
         }
     }
 }
