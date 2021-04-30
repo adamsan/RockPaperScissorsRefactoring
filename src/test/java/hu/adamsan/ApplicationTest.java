@@ -165,5 +165,25 @@ class ApplicationTest {
 
     }
 
+    @Test
+    void testProgramStopsOnInvalidInput(){
+        MyScanner scanner = mock(MyScanner.class);
+        when(scanner.nextLine()).thenReturn("foobar");
+
+        Random random = mock(Random.class);
+        when(random.nextInt(anyInt())).thenReturn(90).thenThrow(new RuntimeException("Random.nextInt() called twice"));
+
+        var out = new RememberingPrintStream(System.out);
+
+        new Application.Game(scanner, out, random).invoke();
+        String expected = "Do you pick rock, paper, or scissors?\n" +
+                "Move not recognized! Please try again.\n" +
+                "The computer chose: scissors\n" +
+                "Scissors beats paper. Player wins!";
+
+        assertEquals(expected, out.getContent());
+
+    }
+
 
 }
