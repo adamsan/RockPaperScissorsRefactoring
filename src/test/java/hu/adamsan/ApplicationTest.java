@@ -21,7 +21,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "The computer chose: rock\n" +
                 "It's a tie!";
@@ -38,7 +38,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "The computer chose: paper\n" +
                 "It's a tie!";
@@ -55,7 +55,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "The computer chose: scissors\n" +
                 "It's a tie!";
@@ -72,7 +72,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "The computer chose: scissors\n" +
                 "Rock beats scissors. Player wins!";
@@ -88,7 +88,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "The computer chose: rock\n" +
                 "Rock beats scissors. The computer wins!";
@@ -106,7 +106,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "The computer chose: rock\n" +
                 "Paper beats rock. Player wins!";
@@ -123,7 +123,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "The computer chose: paper\n" +
                 "Paper beats rock. The computer wins!";
@@ -140,7 +140,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "The computer chose: scissors\n" +
                 "It's a tie!";
@@ -157,7 +157,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "The computer chose: scissors\n" +
                 "Scissors beats paper. The computer wins!";
@@ -175,7 +175,7 @@ class ApplicationTest {
 
         var out = new RememberingPrintStream(System.out);
 
-        new Application.Game(scanner, out, random).play();
+        new Game(scanner, out, random).play();
         String expected = "Do you pick rock, paper, or scissors?\n" +
                 "Move not recognized! Please try again.";
 
