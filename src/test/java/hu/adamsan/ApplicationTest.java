@@ -12,7 +12,7 @@ import static org.mockito.Mockito.when;
 class ApplicationTest {
 
     @Test
-    void testMain() {
+    void rockTiesWithRock() {
         MyScanner scanner = mock(MyScanner.class);
         when(scanner.nextLine()).thenReturn("rock");
 
@@ -22,7 +22,9 @@ class ApplicationTest {
         var out = new RememberingPrintStream(System.out);
 
         new Application.Game(scanner, out, random).invoke();
-        String expected = "";
+        String expected = "Do you pick rock, paper, or scissors?\n" +
+                "The computer chose: rock\n" +
+                "It's a tie!";
         assertEquals(expected, out.getContent());
     }
 
