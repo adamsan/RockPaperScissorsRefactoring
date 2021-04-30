@@ -13,14 +13,21 @@ public class Application {
     static class Game {
 
         private final PrintStream out;
-        private final Scanner scanner;
+        private final MyScanner scanner;
         private final Random random;
 
         public Game(Scanner scanner, PrintStream out, Random random) {
             this.out = out;
+            this.scanner = new MyScanner(scanner);
+            this.random = random;
+        }
+
+        Game(MyScanner scanner, PrintStream out, Random random) {
+            this.out = out;
             this.scanner = scanner;
             this.random = random;
         }
+
 
         void invoke() {
             println("Do you pick rock, paper, or scissors?");
