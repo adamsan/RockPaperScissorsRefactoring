@@ -33,10 +33,7 @@ class Game {
 
         // Making sure that the player enters either rock, paper, or scissors
         // If they don't, move will not be recognized
-        if (ROCK.equals(playerChoice) ||
-                PAPER.equals(playerChoice) ||
-                SCISSORS.equals(playerChoice)) {
-        } else {
+        if (!isValid(playerChoice)) {
             println("Move not recognized! Please try again.");
             return;
         }
@@ -93,6 +90,12 @@ class Game {
         else {
             println("Scissors beats paper. Player wins!");
         }
+    }
+
+    private boolean isValid(String playerChoice) {
+        return ROCK.equals(playerChoice) ||
+                PAPER.equals(playerChoice) ||
+                SCISSORS.equals(playerChoice);
     }
 
     private void println(String str) {
