@@ -65,30 +65,30 @@ public class Application {
 
             // Comparing the choices
             // Both choices are the same (tie)
-            if (playerChoice == computerMoveChoice) {
+            if (playerChoice.equals(computerMoveChoice)) {
                 println("It's a tie!");
             }
             // Player choose rock --- Computer choose paper (computer wins)
-            else if (playerChoice == "rock" && computerMoveChoice == "paper") {
+            else if (playerChoice.equals("rock") && computerMoveChoice.equals("paper")) {
                 println("Paper beats rock. The computer wins!");
 
             }
             // Player choose rock --- Computer choose scissors (player wins)
-            else if (playerChoice == "rock" && computerMoveChoice == "scissors") {
+            else if (playerChoice.equals("rock") && computerMoveChoice.equals("scissors")) {
                 println("Rock beats scissors. Player wins!");
             }
 
             // Player choose paper --- Computer choose rock (player wins)
-            else if (playerChoice == "paper" && computerMoveChoice == "rock") {
+            else if (playerChoice.equals("paper") && computerMoveChoice.equals("rock")) {
                 println("Paper beats rock. Player wins!");
             }
             // Player choose paper --- Computer choose scissors (computer wins)
-            else if (playerChoice == "paper" && computerMoveChoice == "scissors") {
+            else if (playerChoice.equals("paper") && computerMoveChoice.equals("scissors")) {
                 println("Scissors beats paper. The computer wins!");
             }
 
             // Player choose scissors --- Computer choose rock (computer wins)
-            else if (playerChoice == "scissors" && computerMoveChoice == "rock") {
+            else if (playerChoice.equals("scissors") && computerMoveChoice.equals("rock")) {
                 println("Rock beats scissors. The computer wins!");
             }
 
