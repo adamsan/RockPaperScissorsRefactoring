@@ -6,9 +6,6 @@ import java.util.Scanner;
 
 class Game {
 
-    public static final String ROCK = "rock";
-    public static final String PAPER = "paper";
-    public static final String SCISSORS = "scissors";
     private final PrintStream out;
     private final MyScanner scanner;
     private final Random random;
@@ -55,9 +52,12 @@ class Game {
     }
 
     private boolean isValid(String playerChoice) {
-        return ROCK.equals(playerChoice) ||
-                PAPER.equals(playerChoice) ||
-                SCISSORS.equals(playerChoice);
+        try {
+            Choice.valueOf(playerChoice.toUpperCase());
+            return true;
+        } catch (IllegalArgumentException ex) {
+            return false;
+        }
     }
 
     private void println(String str) {
