@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-        Game.invoke();
+        new Game().invoke();
     }
 
     static class Game {
-        static void invoke() {
+        void invoke() {
             System.out.println("Do you pick rock, paper, or scissors?");
 
             Scanner choice = new Scanner(System.in);
