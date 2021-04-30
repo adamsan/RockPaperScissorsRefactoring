@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-        new Game().invoke();
+        new Game(new Scanner(System.in), System.out).invoke();
     }
 
     static class Game {
@@ -15,9 +15,9 @@ public class Application {
         private final PrintStream out;
         private final Scanner scanner;
 
-        public Game() {
-            out = System.out;
-            scanner = new Scanner(System.in);
+        public Game(Scanner scanner, PrintStream out) {
+            this.out = out;
+            this.scanner = scanner;
         }
 
         void invoke() {
