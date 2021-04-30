@@ -13,17 +13,17 @@ public class Application {
     static class Game {
 
         private final PrintStream out;
+        private final Scanner scanner;
 
         public Game() {
             out = System.out;
+            scanner = new Scanner(System.in);
         }
 
         void invoke() {
             println("Do you pick rock, paper, or scissors?");
 
-            Scanner choice = new Scanner(System.in);
-
-            String playerChoice = choice.nextLine();
+            String playerChoice = scanner.nextLine();
 
             // Making sure that the player enters either rock, paper, or scissors
             // If they don't, move will not be recognized
