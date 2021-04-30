@@ -23,16 +23,8 @@ class Game {
     }
 
     void play() {
-        println("Do you pick rock, paper, or scissors?");
-
-        String playerChoice = scanner.nextLine();
-
-
-        if (!isValid(playerChoice)) {
-            println("Move not recognized! Please try again.");
-            return;
-        }
-        Choice player = Choice.valueOf(playerChoice.toUpperCase());
+        Choice player = getPlayer();
+        if (player == null) return;
 
         Choice computer = getComputer();
 
@@ -43,6 +35,17 @@ class Game {
         } else if (computer.beats(player)) {
             println(computer.capitalize() + " beats " + player.toLowerCase() + ". The computer wins!");
         }
+    }
+
+    private Choice getPlayer() {
+        println("Do you pick rock, paper, or scissors?");
+        String playerChoice = scanner.nextLine();
+
+        if (!isValid(playerChoice)) {
+            println("Move not recognized! Please try again.");
+            return null;
+        }
+        return Choice.valueOf(playerChoice.toUpperCase());
     }
 
     private Choice getComputer() {
