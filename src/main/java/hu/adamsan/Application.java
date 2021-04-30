@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-        new Game(new Scanner(System.in), System.out, new Random()).invoke();
+        new Game(new Scanner(System.in), System.out, new Random()).play();
     }
 
     static class Game {
@@ -32,7 +32,7 @@ public class Application {
         }
 
 
-        void invoke() {
+        void play() {
             println("Do you pick rock, paper, or scissors?");
 
             String playerChoice = scanner.nextLine();
