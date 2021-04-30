@@ -12,6 +12,9 @@ public class Application {
 
     static class Game {
 
+        public static final String ROCK = "rock";
+        public static final String PAPER = "paper";
+        public static final String SCISSORS = "scissors";
         private final PrintStream out;
         private final MyScanner scanner;
         private final Random random;
@@ -36,9 +39,9 @@ public class Application {
 
             // Making sure that the player enters either rock, paper, or scissors
             // If they don't, move will not be recognized
-            if ("rock".equals(playerChoice) ||
-                    "paper".equals(playerChoice) ||
-                    "scissors".equals(playerChoice)) {
+            if (ROCK.equals(playerChoice) ||
+                    PAPER.equals(playerChoice) ||
+                    SCISSORS.equals(playerChoice)) {
             } else {
                 println("Move not recognized! Please try again.");
                 return;
@@ -53,11 +56,11 @@ public class Application {
             // 66-98 = scissors
             String computerMoveChoice;
             if (computerNumber < 32) {
-                computerMoveChoice = "rock";
+                computerMoveChoice = ROCK;
             } else if (computerNumber > 32 && computerNumber < 66) {
-                computerMoveChoice = "paper";
+                computerMoveChoice = PAPER;
             } else {
-                computerMoveChoice = "scissors";
+                computerMoveChoice = SCISSORS;
             }
 
             // Printing out what the computer chose
@@ -69,26 +72,26 @@ public class Application {
                 println("It's a tie!");
             }
             // Player choose rock --- Computer choose paper (computer wins)
-            else if (playerChoice.equals("rock") && computerMoveChoice.equals("paper")) {
+            else if (playerChoice.equals(ROCK) && computerMoveChoice.equals(PAPER)) {
                 println("Paper beats rock. The computer wins!");
 
             }
             // Player choose rock --- Computer choose scissors (player wins)
-            else if (playerChoice.equals("rock") && computerMoveChoice.equals("scissors")) {
+            else if (playerChoice.equals(ROCK) && computerMoveChoice.equals(SCISSORS)) {
                 println("Rock beats scissors. Player wins!");
             }
 
             // Player choose paper --- Computer choose rock (player wins)
-            else if (playerChoice.equals("paper") && computerMoveChoice.equals("rock")) {
+            else if (playerChoice.equals(PAPER) && computerMoveChoice.equals(ROCK)) {
                 println("Paper beats rock. Player wins!");
             }
             // Player choose paper --- Computer choose scissors (computer wins)
-            else if (playerChoice.equals("paper") && computerMoveChoice.equals("scissors")) {
+            else if (playerChoice.equals(PAPER) && computerMoveChoice.equals(SCISSORS)) {
                 println("Scissors beats paper. The computer wins!");
             }
 
             // Player choose scissors --- Computer choose rock (computer wins)
-            else if (playerChoice.equals("scissors") && computerMoveChoice.equals("rock")) {
+            else if (playerChoice.equals(SCISSORS) && computerMoveChoice.equals(ROCK)) {
                 println("Rock beats scissors. The computer wins!");
             }
 
