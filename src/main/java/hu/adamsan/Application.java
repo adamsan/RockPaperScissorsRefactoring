@@ -6,7 +6,9 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-        new Game(new Scanner(System.in), System.out, new Random()).play();
+        try(Scanner scanner = new Scanner(System.in)) {
+            new Game(scanner, System.out, new Random()).play();
+        }
     }
 
 }
