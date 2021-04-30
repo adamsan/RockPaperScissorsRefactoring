@@ -7,17 +7,19 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-        new Game(new Scanner(System.in), System.out).invoke();
+        new Game(new Scanner(System.in), System.out, new Random()).invoke();
     }
 
     static class Game {
 
         private final PrintStream out;
         private final Scanner scanner;
+        private final Random random;
 
-        public Game(Scanner scanner, PrintStream out) {
+        public Game(Scanner scanner, PrintStream out, Random random) {
             this.out = out;
             this.scanner = scanner;
+            this.random = random;
         }
 
         void invoke() {
@@ -34,9 +36,8 @@ public class Application {
                 println("Move not recognized! Please try again.");
             }
 
-            Random randomNumber = new Random();
             // Random number from 0 - 98 (0-32, 33-65, 66-98)
-            int computerNumber = randomNumber.nextInt(98);
+            int computerNumber = random.nextInt(98);
 
             // Computer chooses a move based on a randomly generated int
             // 0-32 = rock
