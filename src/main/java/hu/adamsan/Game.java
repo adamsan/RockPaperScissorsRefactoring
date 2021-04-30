@@ -38,21 +38,7 @@ class Game {
             return;
         }
 
-        // Random number from 0 - 98 (0-32, 33-65, 66-98)
-        int computerNumber = random.nextInt(98);
-
-        // Computer chooses a move based on a randomly generated int
-        // 0-32 = rock
-        // 33-66 = paper
-        // 66-98 = scissors
-        String computerMoveChoice;
-        if (computerNumber < 32) {
-            computerMoveChoice = ROCK;
-        } else if (computerNumber > 32 && computerNumber < 66) {
-            computerMoveChoice = PAPER;
-        } else {
-            computerMoveChoice = SCISSORS;
-        }
+        String computerMoveChoice = getComputerMoveChoice();
 
         // Printing out what the computer chose
         println("The computer chose: " + computerMoveChoice);
@@ -90,6 +76,25 @@ class Game {
         else {
             println("Scissors beats paper. Player wins!");
         }
+    }
+
+    private String getComputerMoveChoice() {
+        // Random number from 0 - 98 (0-32, 33-65, 66-98)
+        int computerNumber = random.nextInt(98);
+
+        // Computer chooses a move based on a randomly generated int
+        // 0-32 = rock
+        // 33-66 = paper
+        // 66-98 = scissors
+        String computerMoveChoice;
+        if (computerNumber < 32) {
+            computerMoveChoice = ROCK;
+        } else if (computerNumber > 32 && computerNumber < 66) {
+            computerMoveChoice = PAPER;
+        } else {
+            computerMoveChoice = SCISSORS;
+        }
+        return computerMoveChoice;
     }
 
     private boolean isValid(String playerChoice) {
